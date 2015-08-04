@@ -1,0 +1,10 @@
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\bin\Release\Dogenova.exe
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\bin\Release\Dogenova.pdb
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\Dogenova.battle_scene.resources
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\Dogenova.class_select.resources
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\Dogenova.Properties.Resources.resources
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\Dogenova.exe
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\Dogenova.pdb

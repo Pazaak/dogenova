@@ -1,0 +1,19 @@
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\bin\Debug\Dogenova.exe
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\bin\Debug\Dogenova.pdb
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\obj\x86\Debug\Dogenova.Properties.Resources.resources
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\obj\x86\Debug\Dogenova.exe
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\obj\x86\Debug\Dogenova.pdb
+C:\Documents and Settings\Aggalem\Configuración local\Datos de programa\Temporary Projects\Dogenova\obj\x86\Debug\Dogenova.class_select.resources
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\Dogenova.exe
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\Dogenova.pdb
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\bin\Debug\Dogenova.exe
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\bin\Debug\Dogenova.pdb
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\Dogenova.class_select.resources
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\Dogenova.Properties.Resources.resources
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\Dogenova.battle_scene.resources
