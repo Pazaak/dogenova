@@ -8,3 +8,11 @@ C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dog
 C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\Dogenova.exe
 C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Release\Dogenova.pdb
+C:\Users\Maleza\Documents\GitHub\dogenova\bin\Release\Dogenova.exe
+C:\Users\Maleza\Documents\GitHub\dogenova\bin\Release\Dogenova.pdb
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Release\Dogenova.battle_scene.resources
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Release\Dogenova.class_select.resources
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Release\Dogenova.Properties.Resources.resources
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Release\Dogenova.csproj.GenerateResource.Cache
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Release\Dogenova.exe
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Release\Dogenova.pdb

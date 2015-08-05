@@ -147,8 +147,14 @@ namespace Dogenova
             int[] speeds = new int[8];
             int[] tiers = new int[8];
 
+            int selector = 0;
+
             battler[] _battlers = _tree[id].battlers;
             bool AI = (_tree[id].depth % 2 == 0);
+
+            List<phases>[] swap = new List<phases>[2];
+            swap[0] = new List<phases>();
+            swap[1] = new List<phases>();
 
             for (int i = 0; i < 8; i++)
             {
@@ -158,17 +164,13 @@ namespace Dogenova
 
             combat_methods.combatSpeed(speeds, tiers);
 
-            List<phases>[] swap = new List<phases>[2];
-            swap[0] = new List<phases>();
-            swap[1] = new List<phases>();
-
             swap[0].Add(_tree[id].orders);
 
             for (int i = AI? 4 : 0; i < (AI? 8 : 4); i++)
             {
                 if (!_battlers[i].dead)
                 {
-                    int selector = (swap[0].Count > swap[1].Count) ? 0 : 1;
+                    selector = (swap[0].Count > swap[1].Count) ? 0 : 1;
 
                     for (int j = 0; j < swap[selector].Count; j++)
                     {
@@ -229,7 +231,9 @@ namespace Dogenova
 
             int nDepth = _tree[id].depth + 1;
 
-            foreach (phases p in swap[0])
+            selector = (swap[0].Count > swap[1].Count) ? 0 : 1;
+
+            foreach (phases p in swap[selector])
             {
                 node temp = new node(nDepth, id, _battlers, p);
                 temp.alpha = _tree[id].alpha;
