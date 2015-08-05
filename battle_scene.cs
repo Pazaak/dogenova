@@ -161,7 +161,7 @@ namespace Dogenova
 
             if (row >= 4)
             {
-                IAactions();
+                AIactions();
                 turnActions();
             }
         }
@@ -222,7 +222,7 @@ namespace Dogenova
 
             if (row >= 4)
             {
-                IAactions();
+                AIactions();
                 turnActions();
             }
         }
@@ -270,16 +270,21 @@ namespace Dogenova
 
         private void aAttack(battler source, battler target)
         {
-            combat_methods.damageOT(source, target);
+            int dmg = combat_methods.damageOT(source, target);
+            feedback.Text += source.ToString() + " does " + dmg + "p to " + target.ToString() + Environment.NewLine;
         }
 
         private void aDefend(battler target, bool begin)
         {
             target.defending = begin;
+            if (begin)
+                feedback.Text += target.ToString() + " defends"+Environment.NewLine;
         }
 
         private void turnActions()
         {
+            feedback.Clear();
+
             foreach (Action a in pre_combat)
                 a.Invoke();
 
@@ -345,35 +350,60 @@ namespace Dogenova
             }
         }
 
-        private void IAactions()
+        private void AIactions()
         {
-            Random rnd = new Random();
+            phases AIDecision = alfa_beta.AIOrders(battlerFormation, 2);
 
-            for (int i = row; i < 8; i++)
+            for (int i = 0; i < 8; i++ )
             {
-                battler b1 = battlerFormation[i];
-                if (rnd.Next(3) == 0)
-                {
-                    pre_combat[speedTier[i]] = (() => aDefend(b1, true));
-                    post_combat[speedTier[i]] = (() => aDefend(b1, false));
-                }
-                else
-                {
-                    if (b1.front && frontAllies != 0)
+                #region Precombat
+                List<int> pre = AIDecision.pre_combat[i];
+                if( pre.Count != 0 )
+                    switch (pre[0])
                     {
-                        int target = rnd.Next(4);
-                        while (!battlerFormation[target].front) target = rnd.Next(4);
-
-                        battler b2 = battlerFormation[target];
-                        combat[speedTier[i]] = (() => aAttack(b1, b2));
+                        case Constants.F_DEFEND:
+                            battler temp = battlerFormation[pre[1]];
+                            pre_combat[i] = (() => aDefend(temp, true));
+                            break;
+                        case Constants.F_ATTACK:
+                            battler b1 = battlerFormation[pre[1]];
+                            battler b2 = battlerFormation[pre[2]];
+                            pre_combat[i] = (() => aAttack(b1, b2));
+                            break;
                     }
-                    else
+                #endregion
+
+                #region Combat
+                List<int> mid = AIDecision.combat[i];
+                if (mid.Count != 0)
+                    switch (mid[0])
                     {
-                        battler b2 = battlerFormation[rnd.Next(4)];
-                        combat[speedTier[i]] = (() => aAttack(b1, b2));
+                        case Constants.F_ATTACK:
+                            battler b1 = battlerFormation[mid[1]];
+                            battler b2 = battlerFormation[mid[2]];
+                            combat[i] = (() => aAttack(b1, b2));
+                            break;
                     }
+                #endregion
 
-                }
+                #region Postcombat
+                List<int> post = AIDecision.post_combat[i];
+                if (post.Count != 0)
+                    switch (post[0])
+                    {
+                        case Constants.F_DEFEND:
+                            battler temp = battlerFormation[post[1]];
+                            post_combat[i] = (() => aDefend(temp, false));
+                            break;
+                        case Constants.F_ATTACK:
+                            battler b1 = battlerFormation[post[1]];
+                            battler b2 = battlerFormation[post[2]];
+                            post_combat[i] = (() => aAttack(b1, b2));
+                            break;
+                    }
+                #endregion
+
+
             }
         }
 

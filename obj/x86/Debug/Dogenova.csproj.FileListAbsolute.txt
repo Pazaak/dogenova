@@ -17,3 +17,11 @@ C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dog
 C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\Dogenova.battle_scene.resources
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.exe
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.pdb
+C:\Users\Maleza\Documents\GitHub\dogenova\bin\Debug\Dogenova.exe
+C:\Users\Maleza\Documents\GitHub\dogenova\bin\Debug\Dogenova.pdb
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.battle_scene.resources
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.class_select.resources
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.Properties.Resources.resources
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.csproj.GenerateResource.Cache

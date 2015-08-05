@@ -13,6 +13,8 @@ namespace Dogenova
         [STAThread]
         static void Main()
         {
+            // AB debug code
+            /**
             Random rnd = new Random();
             int[] jobFormation = new int[8];
             battler[] battlerFormation = new battler[8];
@@ -51,7 +53,8 @@ namespace Dogenova
             }
 
             alfa_beta.IAOrders(battlerFormation, 4);
-
+            */
+          
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new class_select());

@@ -60,6 +60,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.defend = new System.Windows.Forms.Button();
             this.attack = new System.Windows.Forms.Button();
+            this.feedback = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -86,8 +87,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.91216F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.08784F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.20792F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.79208F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.retreat, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
@@ -96,7 +97,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.14207F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.14208F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.85792F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(592, 366);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -132,15 +133,15 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(473, 280);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(409, 279);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // backAlly4
             // 
             this.backAlly4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backAlly4.Location = new System.Drawing.Point(357, 213);
+            this.backAlly4.Location = new System.Drawing.Point(309, 210);
             this.backAlly4.Name = "backAlly4";
-            this.backAlly4.Size = new System.Drawing.Size(113, 64);
+            this.backAlly4.Size = new System.Drawing.Size(97, 66);
             this.backAlly4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backAlly4.TabIndex = 15;
             this.backAlly4.TabStop = false;
@@ -149,9 +150,9 @@
             // frontAlly4
             // 
             this.frontAlly4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frontAlly4.Location = new System.Drawing.Point(239, 213);
+            this.frontAlly4.Location = new System.Drawing.Point(207, 210);
             this.frontAlly4.Name = "frontAlly4";
-            this.frontAlly4.Size = new System.Drawing.Size(112, 64);
+            this.frontAlly4.Size = new System.Drawing.Size(96, 66);
             this.frontAlly4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontAlly4.TabIndex = 14;
             this.frontAlly4.TabStop = false;
@@ -160,9 +161,9 @@
             // frontRival4
             // 
             this.frontRival4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frontRival4.Location = new System.Drawing.Point(121, 213);
+            this.frontRival4.Location = new System.Drawing.Point(105, 210);
             this.frontRival4.Name = "frontRival4";
-            this.frontRival4.Size = new System.Drawing.Size(112, 64);
+            this.frontRival4.Size = new System.Drawing.Size(96, 66);
             this.frontRival4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontRival4.TabIndex = 13;
             this.frontRival4.TabStop = false;
@@ -172,9 +173,9 @@
             // backRival4
             // 
             this.backRival4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backRival4.Location = new System.Drawing.Point(3, 213);
+            this.backRival4.Location = new System.Drawing.Point(3, 210);
             this.backRival4.Name = "backRival4";
-            this.backRival4.Size = new System.Drawing.Size(112, 64);
+            this.backRival4.Size = new System.Drawing.Size(96, 66);
             this.backRival4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backRival4.TabIndex = 12;
             this.backRival4.TabStop = false;
@@ -186,9 +187,9 @@
             // backAlly3
             // 
             this.backAlly3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backAlly3.Location = new System.Drawing.Point(357, 143);
+            this.backAlly3.Location = new System.Drawing.Point(309, 141);
             this.backAlly3.Name = "backAlly3";
-            this.backAlly3.Size = new System.Drawing.Size(113, 64);
+            this.backAlly3.Size = new System.Drawing.Size(97, 63);
             this.backAlly3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backAlly3.TabIndex = 11;
             this.backAlly3.TabStop = false;
@@ -197,9 +198,9 @@
             // frontAlly3
             // 
             this.frontAlly3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frontAlly3.Location = new System.Drawing.Point(239, 143);
+            this.frontAlly3.Location = new System.Drawing.Point(207, 141);
             this.frontAlly3.Name = "frontAlly3";
-            this.frontAlly3.Size = new System.Drawing.Size(112, 64);
+            this.frontAlly3.Size = new System.Drawing.Size(96, 63);
             this.frontAlly3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontAlly3.TabIndex = 10;
             this.frontAlly3.TabStop = false;
@@ -208,9 +209,9 @@
             // frontRival3
             // 
             this.frontRival3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frontRival3.Location = new System.Drawing.Point(121, 143);
+            this.frontRival3.Location = new System.Drawing.Point(105, 141);
             this.frontRival3.Name = "frontRival3";
-            this.frontRival3.Size = new System.Drawing.Size(112, 64);
+            this.frontRival3.Size = new System.Drawing.Size(96, 63);
             this.frontRival3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontRival3.TabIndex = 9;
             this.frontRival3.TabStop = false;
@@ -220,9 +221,9 @@
             // backRival3
             // 
             this.backRival3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backRival3.Location = new System.Drawing.Point(3, 143);
+            this.backRival3.Location = new System.Drawing.Point(3, 141);
             this.backRival3.Name = "backRival3";
-            this.backRival3.Size = new System.Drawing.Size(112, 64);
+            this.backRival3.Size = new System.Drawing.Size(96, 63);
             this.backRival3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backRival3.TabIndex = 8;
             this.backRival3.TabStop = false;
@@ -234,9 +235,9 @@
             // backAlly2
             // 
             this.backAlly2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backAlly2.Location = new System.Drawing.Point(357, 73);
+            this.backAlly2.Location = new System.Drawing.Point(309, 72);
             this.backAlly2.Name = "backAlly2";
-            this.backAlly2.Size = new System.Drawing.Size(113, 64);
+            this.backAlly2.Size = new System.Drawing.Size(97, 63);
             this.backAlly2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backAlly2.TabIndex = 7;
             this.backAlly2.TabStop = false;
@@ -245,9 +246,9 @@
             // frontAlly2
             // 
             this.frontAlly2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frontAlly2.Location = new System.Drawing.Point(239, 73);
+            this.frontAlly2.Location = new System.Drawing.Point(207, 72);
             this.frontAlly2.Name = "frontAlly2";
-            this.frontAlly2.Size = new System.Drawing.Size(112, 64);
+            this.frontAlly2.Size = new System.Drawing.Size(96, 63);
             this.frontAlly2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontAlly2.TabIndex = 6;
             this.frontAlly2.TabStop = false;
@@ -256,9 +257,9 @@
             // frontRival2
             // 
             this.frontRival2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frontRival2.Location = new System.Drawing.Point(121, 73);
+            this.frontRival2.Location = new System.Drawing.Point(105, 72);
             this.frontRival2.Name = "frontRival2";
-            this.frontRival2.Size = new System.Drawing.Size(112, 64);
+            this.frontRival2.Size = new System.Drawing.Size(96, 63);
             this.frontRival2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontRival2.TabIndex = 5;
             this.frontRival2.TabStop = false;
@@ -268,9 +269,9 @@
             // backRival2
             // 
             this.backRival2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backRival2.Location = new System.Drawing.Point(3, 73);
+            this.backRival2.Location = new System.Drawing.Point(3, 72);
             this.backRival2.Name = "backRival2";
-            this.backRival2.Size = new System.Drawing.Size(112, 64);
+            this.backRival2.Size = new System.Drawing.Size(96, 63);
             this.backRival2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backRival2.TabIndex = 4;
             this.backRival2.TabStop = false;
@@ -282,9 +283,9 @@
             // backAlly1
             // 
             this.backAlly1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backAlly1.Location = new System.Drawing.Point(357, 3);
+            this.backAlly1.Location = new System.Drawing.Point(309, 3);
             this.backAlly1.Name = "backAlly1";
-            this.backAlly1.Size = new System.Drawing.Size(113, 64);
+            this.backAlly1.Size = new System.Drawing.Size(97, 63);
             this.backAlly1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backAlly1.TabIndex = 3;
             this.backAlly1.TabStop = false;
@@ -293,9 +294,9 @@
             // frontAlly1
             // 
             this.frontAlly1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frontAlly1.Location = new System.Drawing.Point(239, 3);
+            this.frontAlly1.Location = new System.Drawing.Point(207, 3);
             this.frontAlly1.Name = "frontAlly1";
-            this.frontAlly1.Size = new System.Drawing.Size(112, 64);
+            this.frontAlly1.Size = new System.Drawing.Size(96, 63);
             this.frontAlly1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontAlly1.TabIndex = 2;
             this.frontAlly1.TabStop = false;
@@ -304,9 +305,9 @@
             // frontRival1
             // 
             this.frontRival1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frontRival1.Location = new System.Drawing.Point(121, 3);
+            this.frontRival1.Location = new System.Drawing.Point(105, 3);
             this.frontRival1.Name = "frontRival1";
-            this.frontRival1.Size = new System.Drawing.Size(112, 64);
+            this.frontRival1.Size = new System.Drawing.Size(96, 63);
             this.frontRival1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontRival1.TabIndex = 1;
             this.frontRival1.TabStop = false;
@@ -318,7 +319,7 @@
             this.backRival1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backRival1.Location = new System.Drawing.Point(3, 3);
             this.backRival1.Name = "backRival1";
-            this.backRival1.Size = new System.Drawing.Size(112, 64);
+            this.backRival1.Size = new System.Drawing.Size(96, 63);
             this.backRival1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backRival1.TabIndex = 0;
             this.backRival1.TabStop = false;
@@ -330,9 +331,9 @@
             // retreat
             // 
             this.retreat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.retreat.Location = new System.Drawing.Point(482, 289);
+            this.retreat.Location = new System.Drawing.Point(418, 288);
             this.retreat.Name = "retreat";
-            this.retreat.Size = new System.Drawing.Size(107, 74);
+            this.retreat.Size = new System.Drawing.Size(171, 75);
             this.retreat.TabIndex = 1;
             this.retreat.Text = "Retreat";
             this.retreat.UseVisualStyleBackColor = true;
@@ -352,23 +353,23 @@
             this.tableLayoutPanel3.Controls.Add(this.ally1, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.rival1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 289);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 288);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(473, 74);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(409, 75);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // ally4
             // 
             this.ally4.AutoSize = true;
             this.ally4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ally4.Location = new System.Drawing.Point(239, 54);
+            this.ally4.Location = new System.Drawing.Point(207, 54);
             this.ally4.Name = "ally4";
-            this.ally4.Size = new System.Drawing.Size(231, 20);
+            this.ally4.Size = new System.Drawing.Size(199, 21);
             this.ally4.TabIndex = 7;
             this.ally4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -378,7 +379,7 @@
             this.rival4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rival4.Location = new System.Drawing.Point(3, 54);
             this.rival4.Name = "rival4";
-            this.rival4.Size = new System.Drawing.Size(230, 20);
+            this.rival4.Size = new System.Drawing.Size(198, 21);
             this.rival4.TabIndex = 6;
             this.rival4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -386,9 +387,9 @@
             // 
             this.ally3.AutoSize = true;
             this.ally3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ally3.Location = new System.Drawing.Point(239, 36);
+            this.ally3.Location = new System.Drawing.Point(207, 36);
             this.ally3.Name = "ally3";
-            this.ally3.Size = new System.Drawing.Size(231, 18);
+            this.ally3.Size = new System.Drawing.Size(199, 18);
             this.ally3.TabIndex = 5;
             this.ally3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -398,7 +399,7 @@
             this.rival3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rival3.Location = new System.Drawing.Point(3, 36);
             this.rival3.Name = "rival3";
-            this.rival3.Size = new System.Drawing.Size(230, 18);
+            this.rival3.Size = new System.Drawing.Size(198, 18);
             this.rival3.TabIndex = 4;
             this.rival3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -406,9 +407,9 @@
             // 
             this.ally2.AutoSize = true;
             this.ally2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ally2.Location = new System.Drawing.Point(239, 18);
+            this.ally2.Location = new System.Drawing.Point(207, 18);
             this.ally2.Name = "ally2";
-            this.ally2.Size = new System.Drawing.Size(231, 18);
+            this.ally2.Size = new System.Drawing.Size(199, 18);
             this.ally2.TabIndex = 3;
             this.ally2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -418,7 +419,7 @@
             this.rival2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rival2.Location = new System.Drawing.Point(3, 18);
             this.rival2.Name = "rival2";
-            this.rival2.Size = new System.Drawing.Size(230, 18);
+            this.rival2.Size = new System.Drawing.Size(198, 18);
             this.rival2.TabIndex = 2;
             this.rival2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -426,9 +427,9 @@
             // 
             this.ally1.AutoSize = true;
             this.ally1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ally1.Location = new System.Drawing.Point(239, 0);
+            this.ally1.Location = new System.Drawing.Point(207, 0);
             this.ally1.Name = "ally1";
-            this.ally1.Size = new System.Drawing.Size(231, 18);
+            this.ally1.Size = new System.Drawing.Size(199, 18);
             this.ally1.TabIndex = 1;
             this.ally1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -438,7 +439,7 @@
             this.rival1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rival1.Location = new System.Drawing.Point(3, 0);
             this.rival1.Name = "rival1";
-            this.rival1.Size = new System.Drawing.Size(230, 18);
+            this.rival1.Size = new System.Drawing.Size(198, 18);
             this.rival1.TabIndex = 0;
             this.rival1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -448,21 +449,23 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.defend, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.attack, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.feedback, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(482, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(418, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(107, 280);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(171, 279);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // defend
             // 
             this.defend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.defend.Location = new System.Drawing.Point(3, 143);
+            this.defend.Location = new System.Drawing.Point(3, 72);
             this.defend.Name = "defend";
-            this.defend.Size = new System.Drawing.Size(101, 134);
+            this.defend.Size = new System.Drawing.Size(165, 63);
             this.defend.TabIndex = 1;
             this.defend.Text = "Defend";
             this.defend.UseVisualStyleBackColor = true;
@@ -473,11 +476,23 @@
             this.attack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.attack.Location = new System.Drawing.Point(3, 3);
             this.attack.Name = "attack";
-            this.attack.Size = new System.Drawing.Size(101, 134);
+            this.attack.Size = new System.Drawing.Size(165, 63);
             this.attack.TabIndex = 0;
             this.attack.Text = "Attack";
             this.attack.UseVisualStyleBackColor = true;
             this.attack.Click += new System.EventHandler(this.attack_Click);
+            // 
+            // feedback
+            // 
+            this.feedback.AcceptsReturn = true;
+            this.feedback.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feedback.Location = new System.Drawing.Point(3, 141);
+            this.feedback.Multiline = true;
+            this.feedback.Name = "feedback";
+            this.feedback.ReadOnly = true;
+            this.feedback.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.feedback.Size = new System.Drawing.Size(165, 135);
+            this.feedback.TabIndex = 2;
             // 
             // timer1
             // 
@@ -512,6 +527,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -550,5 +566,6 @@
         private System.Windows.Forms.Button defend;
         private System.Windows.Forms.Button attack;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox feedback;
     }
 }

@@ -7,7 +7,7 @@ namespace Dogenova
 {
     class alfa_beta
     {
-        public static phases IAOrders(battler[] battlers, int maxDepth)
+        public static phases AIOrders(battler[] battlers, int maxDepth)
         {
             int next = 0, prev = -1;
 
@@ -148,7 +148,7 @@ namespace Dogenova
             int[] tiers = new int[8];
 
             battler[] _battlers = _tree[id].battlers;
-            bool IA = (_tree[id].depth % 2 == 0);
+            bool AI = (_tree[id].depth % 2 == 0);
 
             for (int i = 0; i < 8; i++)
             {
@@ -164,7 +164,7 @@ namespace Dogenova
 
             swap[0].Add(_tree[id].orders);
 
-            for (int i = IA? 4 : 0; i < (IA? 8 : 4); i++)
+            for (int i = AI? 4 : 0; i < (AI? 8 : 4); i++)
             {
                 if (!_battlers[i].dead)
                 {
@@ -188,7 +188,7 @@ namespace Dogenova
                         List<int> frontTargets = new List<int>();
                         List<int> backTargets = new List<int>();
 
-                        for (int k = IA ? 0 : 4; k < (IA ? 4 : 8); k++)
+                        for (int k = AI ? 0 : 4; k < (AI ? 4 : 8); k++)
                         {
                             if (!_battlers[k].dead)
                             {
@@ -265,10 +265,10 @@ namespace Dogenova
             if (deadEnemies == 4 && deadAllies == 4) // Tie
                 return 0;
 
-            if (deadEnemies == 4) // IA lose
+            if (deadEnemies == 4) // AI lose
                 return int.MinValue;
 
-            if (deadAllies == 4) // IA win
+            if (deadAllies == 4) // AI win
                 return int.MaxValue;
 
             int value = deadAllies * (10 - agg_con) * 500 - deadEnemies * agg_con * 500;

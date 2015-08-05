@@ -71,7 +71,7 @@ namespace Dogenova
             }
 
         }
-        public static void damageOT(battler source, battler target)
+        public static int damageOT(battler source, battler target)
         {
             if (!target.dead && !source.dead)
             {
@@ -80,7 +80,11 @@ namespace Dogenova
                 target.hp -= (int)damage * 2;
 
                 target.hp = (target.hp < 0) ? 0 : target.hp;
+
+                return (int)damage * 2;
             }
+
+            return -1;
         }
 
         public static void checkDeath(battler target)

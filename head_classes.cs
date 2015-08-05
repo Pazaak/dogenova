@@ -40,6 +40,11 @@ namespace Dogenova
 
             return res;
         }
+
+        public string ToString()
+        {
+            return (this.ally) ? "Ally "+(this.id+1) : "Enemy "+(this.id-3);
+        }
     }
 
     class phases
