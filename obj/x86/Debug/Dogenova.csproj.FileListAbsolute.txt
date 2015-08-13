@@ -25,3 +25,4 @@ C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.battle_scene.re
 C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.class_select.resources
 C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.Properties.Resources.resources
 C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.csproj.GenerateResource.Cache
+C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.csprojResolveAssemblyReference.cache

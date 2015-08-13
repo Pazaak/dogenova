@@ -144,7 +144,7 @@
             this.class1.Location = new System.Drawing.Point(12, 12);
             this.class1.Name = "class1";
             this.class1.Size = new System.Drawing.Size(121, 73);
-            this.class1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.class1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.class1.TabIndex = 6;
             this.class1.TabStop = false;
             // 
@@ -154,7 +154,7 @@
             this.class2.Location = new System.Drawing.Point(159, 12);
             this.class2.Name = "class2";
             this.class2.Size = new System.Drawing.Size(121, 73);
-            this.class2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.class2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.class2.TabIndex = 7;
             this.class2.TabStop = false;
             // 
@@ -164,7 +164,7 @@
             this.class3.Location = new System.Drawing.Point(12, 125);
             this.class3.Name = "class3";
             this.class3.Size = new System.Drawing.Size(121, 73);
-            this.class3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.class3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.class3.TabIndex = 8;
             this.class3.TabStop = false;
             // 
@@ -174,7 +174,7 @@
             this.class4.Location = new System.Drawing.Point(159, 125);
             this.class4.Name = "class4";
             this.class4.Size = new System.Drawing.Size(121, 73);
-            this.class4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.class4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.class4.TabIndex = 9;
             this.class4.TabStop = false;
             // 

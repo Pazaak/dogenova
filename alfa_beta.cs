@@ -246,7 +246,7 @@ namespace Dogenova
 
         private static int valuate(battler[] field)
         {
-            int agg_con = 5; // Pending to be externalized, 0 full aggro, 10 full control
+            int agg_con = 4; // Pending to be externalized, 0 full aggro, 10 full control
             int deadAllies = 0, deadEnemies = 0, frontDeadAllies = 0, frontDeadEnemies = 0 ;
             int frontAllies = 0, frontEnemies = 0, differentialAllies = 0, differentialEnemies = 0;
 

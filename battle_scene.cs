@@ -242,18 +242,28 @@ namespace Dogenova
             switch (battler)
             {
                 case 0:
-                case 1:
-                case 2:
                     imgBoxes[code * 4 + id].Image = Properties.Resources.knight;
+                    break;
+                case 1:
+                    imgBoxes[code * 4 + id].Image = Properties.Resources.soldier;
+                    break;
+                case 2:
+                    imgBoxes[code * 4 + id].Image = Properties.Resources.fighter;
                     break;
                 case 3:
-                case 4:
-                case 5:
                     imgBoxes[code * 4 + id].Image = Properties.Resources.mage;
                     break;
+                case 4:
+                    imgBoxes[code * 4 + id].Image = Properties.Resources.heretic;
+                    break;
+                case 5:
+                    imgBoxes[code * 4 + id].Image = Properties.Resources.priest;
+                    break;
                 case 6:
+                    imgBoxes[code * 4 + id].Image = Properties.Resources.scout;
+                    break;
                 case 7:
-                    imgBoxes[code * 4 + id].Image = Properties.Resources.knight;
+                    imgBoxes[code * 4 + id].Image = Properties.Resources.shooter;
                     break;
             }
 
@@ -307,18 +317,21 @@ namespace Dogenova
             {
                 MessageBox.Show("DRAW");
                 this.Close();
+                return;
             }
 
             if (enemiesLeft == 0)
             {
                 MessageBox.Show("WIN");
                 this.Close();
+                return;
             }
 
             if (alliesLeft == 0)
             {
                 MessageBox.Show("LOSE");
                 this.Close();
+                return;
             }
 
             clearOrders();

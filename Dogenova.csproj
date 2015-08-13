@@ -132,6 +132,30 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heretic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\priest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shooter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soldier.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -20,9 +20,9 @@ namespace Dogenova
             drop4.SelectedIndex = 5;
 
             class1.Image = Properties.Resources.knight;
-            class2.Image = Properties.Resources.knight;
+            class2.Image = Properties.Resources.fighter;
             class3.Image = Properties.Resources.mage;
-            class4.Image = Properties.Resources.mage;
+            class4.Image = Properties.Resources.priest;
         }
 
         private void quit_Click(object sender, EventArgs e)
@@ -35,18 +35,28 @@ namespace Dogenova
             switch (drop1.SelectedIndex)
             {
                 case 0:
-                case 1:
-                case 2:
                     class1.Image = Properties.Resources.knight;
+                    break;
+                case 1:
+                    class1.Image = Properties.Resources.soldier;
+                    break;
+                case 2:
+                    class1.Image = Properties.Resources.fighter;
                     break;
                 case 3:
-                case 4:
-                case 5:
                     class1.Image = Properties.Resources.mage;
                     break;
+                case 4:
+                    class1.Image = Properties.Resources.heretic;
+                    break;
+                case 5:
+                    class1.Image = Properties.Resources.priest;
+                    break;
                 case 6:
+                    class1.Image = Properties.Resources.scout;
+                    break;
                 case 7:
-                    class1.Image = Properties.Resources.knight;
+                    class1.Image = Properties.Resources.shooter;
                     break;
             }
         }
@@ -56,18 +66,28 @@ namespace Dogenova
             switch (drop2.SelectedIndex)
             {
                 case 0:
-                case 1:
-                case 2:
                     class2.Image = Properties.Resources.knight;
+                    break;
+                case 1:
+                    class2.Image = Properties.Resources.soldier;
+                    break;
+                case 2:
+                    class2.Image = Properties.Resources.fighter;
                     break;
                 case 3:
-                case 4:
-                case 5:
                     class2.Image = Properties.Resources.mage;
                     break;
+                case 4:
+                    class2.Image = Properties.Resources.heretic;
+                    break;
+                case 5:
+                    class2.Image = Properties.Resources.priest;
+                    break;
                 case 6:
+                    class2.Image = Properties.Resources.scout;
+                    break;
                 case 7:
-                    class2.Image = Properties.Resources.knight;
+                    class2.Image = Properties.Resources.shooter;
                     break;
             }
         }
@@ -77,18 +97,28 @@ namespace Dogenova
             switch (drop3.SelectedIndex)
             {
                 case 0:
-                case 1:
-                case 2:
                     class3.Image = Properties.Resources.knight;
+                    break;
+                case 1:
+                    class3.Image = Properties.Resources.soldier;
+                    break;
+                case 2:
+                    class3.Image = Properties.Resources.fighter;
                     break;
                 case 3:
-                case 4:
-                case 5:
                     class3.Image = Properties.Resources.mage;
                     break;
+                case 4:
+                    class3.Image = Properties.Resources.heretic;
+                    break;
+                case 5:
+                    class3.Image = Properties.Resources.priest;
+                    break;
                 case 6:
+                    class3.Image = Properties.Resources.scout;
+                    break;
                 case 7:
-                    class3.Image = Properties.Resources.knight;
+                    class3.Image = Properties.Resources.shooter;
                     break;
             }
         }
@@ -98,18 +128,28 @@ namespace Dogenova
             switch (drop4.SelectedIndex)
             {
                 case 0:
-                case 1:
-                case 2:
                     class4.Image = Properties.Resources.knight;
+                    break;
+                case 1:
+                    class4.Image = Properties.Resources.soldier;
+                    break;
+                case 2:
+                    class4.Image = Properties.Resources.fighter;
                     break;
                 case 3:
-                case 4:
-                case 5:
                     class4.Image = Properties.Resources.mage;
                     break;
+                case 4:
+                    class4.Image = Properties.Resources.heretic;
+                    break;
+                case 5:
+                    class4.Image = Properties.Resources.priest;
+                    break;
                 case 6:
+                    class4.Image = Properties.Resources.scout;
+                    break;
                 case 7:
-                    class4.Image = Properties.Resources.knight;
+                    class4.Image = Properties.Resources.shooter;
                     break;
             }
         }
