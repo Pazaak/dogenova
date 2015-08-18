@@ -295,43 +295,39 @@ namespace Dogenova
         {
             feedback.Clear();
 
-            foreach (Action a in pre_combat)
+            foreach (Action a in pre_combat.Concat(combat).Concat(post_combat))
+            {
                 a.Invoke();
 
-            foreach(Action a in combat)
-                a.Invoke();
+                refreshData();
 
-            foreach (Action a in post_combat)
-                a.Invoke();
+                for (int i = 0; i < 8; i++)
+                {
+                    isAlive(i);
+                    if (battlerFormation[i].dead)
+                        imgBoxes[charFormation[i]].Hide();
+                }
 
-            refreshData();
+                if (enemiesLeft == 0 && alliesLeft == 0)
+                {
+                    MessageBox.Show("DRAW");
+                    this.Close();
+                    return;
+                }
 
-            for (int i = 0; i < 8; i++)
-            {
-                isAlive(i);
-                if ( battlerFormation[i].dead )
-                    imgBoxes[charFormation[i]].Hide();
-            }
+                if (enemiesLeft == 0)
+                {
+                    MessageBox.Show("WIN");
+                    this.Close();
+                    return;
+                }
 
-            if (enemiesLeft == 0 && alliesLeft == 0)
-            {
-                MessageBox.Show("DRAW");
-                this.Close();
-                return;
-            }
-
-            if (enemiesLeft == 0)
-            {
-                MessageBox.Show("WIN");
-                this.Close();
-                return;
-            }
-
-            if (alliesLeft == 0)
-            {
-                MessageBox.Show("LOSE");
-                this.Close();
-                return;
+                if (alliesLeft == 0)
+                {
+                    MessageBox.Show("LOSE");
+                    this.Close();
+                    return;
+                }
             }
 
             clearOrders();

@@ -246,7 +246,7 @@ namespace Dogenova
 
         private static int valuate(battler[] field)
         {
-            int agg_con = 4; // Pending to be externalized, 0 full aggro, 10 full control
+            int aggro = 3; // Pending to be externalized: 1 min agrro
             int deadAllies = 0, deadEnemies = 0, frontDeadAllies = 0, frontDeadEnemies = 0 ;
             int frontAllies = 0, frontEnemies = 0, differentialAllies = 0, differentialEnemies = 0;
 
@@ -255,7 +255,8 @@ namespace Dogenova
                 deadAllies += field[i].dead ? 1 : 0;
                 frontDeadAllies += (field[i].dead && field[i].front) ? 1 : 0;
                 frontAllies += field[i].front ? 1 : 0;
-                differentialAllies += field[i].maxHp - field[i].hp;
+                if ( !field[i].dead )
+                    differentialAllies += (int)( (field[i].maxHp - field[i].hp) * 100 / field[i].maxHp);
             }
 
             for (int i = 4; i < 8; i++)
@@ -263,7 +264,8 @@ namespace Dogenova
                 deadEnemies += field[i].dead ? 1 : 0;
                 frontDeadEnemies += (field[i].dead && field[i].front) ? 1 : 0;
                 frontEnemies += field[i].front ? 1 : 0;
-                differentialEnemies += field[i].maxHp - field[i].hp;
+                if (!field[i].dead)
+                    differentialEnemies += (int)( (field[i].maxHp - field[i].hp) * 100 / field[i].maxHp);
             }
 
             if (deadEnemies == 4 && deadAllies == 4) // Tie
@@ -275,10 +277,10 @@ namespace Dogenova
             if (deadAllies == 4) // AI win
                 return int.MaxValue;
 
-            int value = deadAllies * (10 - agg_con) * 500 - deadEnemies * agg_con * 500;
-            value += differentialAllies * (10 - agg_con) - differentialEnemies * agg_con;
-            value += (frontAllies == frontDeadAllies) ? (4-deadAllies) * (frontEnemies - frontDeadEnemies) * (10 - agg_con) * 100 : 0;
-            value -= (frontEnemies == frontDeadEnemies) ? (4-deadEnemies) * (frontAllies-frontDeadAllies) * (10 - agg_con) *100 : 0;
+            int value = deadAllies * aggro * 500 - deadEnemies * 500;
+            value += differentialAllies * aggro - differentialEnemies;
+            value += (frontAllies == frontDeadAllies) ? (4-deadAllies) * (frontEnemies - frontDeadEnemies) * aggro * 100 : 0;
+            value -= (frontEnemies == frontDeadEnemies) ? (4-deadEnemies) * (frontAllies-frontDeadAllies) * 100 : 0;
 
             return value;
         }

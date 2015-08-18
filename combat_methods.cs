@@ -75,8 +75,17 @@ namespace Dogenova
         {
             if (!target.dead && !source.dead)
             {
-                double damage = Math.Max(0.8, source.pa / target.pd) * source.pa;
-                damage *= target.defending ? 0.5 : 1;
+                double damage;
+                if (source.pa > source.ma || ( source.pa == source.ma && target.pd < target.md ))
+                {
+                    damage = Math.Max(0.8, source.pa / target.pd) * source.pa;
+                    damage *= target.defending ? 0.5 : 1;
+                }
+                else
+                {
+                    damage = Math.Max(0.8, source.ma / target.md) * source.ma;
+                    damage *= target.defending ? 0.5 : 1;
+                }
                 target.hp -= (int)damage * 2;
 
                 target.hp = (target.hp < 0) ? 0 : target.hp;

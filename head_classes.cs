@@ -38,10 +38,12 @@ namespace Dogenova
         {
             battler res = new battler(this.hp, this.pa, this.pd, this.ma, this.md, this.sp, this.ev, this.cr, this.id, this.front, this.ally);
 
+            res.maxHp = this.maxHp;
+
             return res;
         }
 
-        public string ToString()
+        public override string ToString()
         {
             return (this.ally) ? "Ally "+(this.id+1) : "Enemy "+(this.id-3);
         }
