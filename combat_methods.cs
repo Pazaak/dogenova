@@ -133,10 +133,14 @@ namespace Dogenova
             }
         }
 
-        public static void combatSpeed(int[] speedStats, int[] speedTiers)
+        public static int[] combatSpeed(int[] speedStats)
         {
             int temp;
             bool end = false;
+            int[] speedTiers = new int[8];
+
+            for (int i = 0; i < 8; i++)
+                speedTiers[i] = i;
             // Tol bubble sort
             while (!end)
             {
@@ -167,8 +171,17 @@ namespace Dogenova
                         speedTiers[i] = speedTiers[i + 1];
                         speedTiers[i + 1] = temp;
                     }
+
                 }
             }
+
+            int[] neoSpeedTiers = new int[8];
+            for (int i = 0; i < 8; i++)
+            {
+                neoSpeedTiers[speedTiers[i]] = i;
+            }
+
+            return neoSpeedTiers;
         }
 
         public static void EMPTY() { }

@@ -162,7 +162,7 @@ namespace Dogenova
                 speeds[i] = _battlers[i].sp;
             }
 
-            combat_methods.combatSpeed(speeds, tiers);
+            tiers = combat_methods.combatSpeed(speeds);
 
             swap[0].Add(_tree[id].orders);
 

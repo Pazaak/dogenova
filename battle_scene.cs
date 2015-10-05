@@ -136,7 +136,7 @@ namespace Dogenova
 
             timer1.Start();
 
-            combat_methods.combatSpeed(speeds, speedTier);
+            speedTier = combat_methods.combatSpeed(speeds);
         }
 
         private void retreat_Click(object sender, EventArgs e)
