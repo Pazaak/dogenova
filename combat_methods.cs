@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Dogenova
 {
@@ -182,6 +183,19 @@ namespace Dogenova
             }
 
             return neoSpeedTiers;
+        }
+
+        public static void aAttack(battler source, battler target, TextBox tb)
+        {
+            int dmg = combat_methods.damageOT(source, target);
+            tb.AppendText(source.ToString() + " does " + dmg + "p to " + target.ToString() + Environment.NewLine);
+        }
+
+        public static void aDefend(battler target, bool begin, TextBox tb)
+        {
+            target.defending = begin;
+            if (begin)
+                tb.AppendText(target.ToString() + " defends" + Environment.NewLine);
         }
 
         public static void EMPTY() { }

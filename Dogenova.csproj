@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ai_scene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ai_scene.Designer.cs">
+      <DependentUpon>ai_scene.cs</DependentUpon>
+    </Compile>
     <Compile Include="alfa_beta.cs" />
     <Compile Include="battle_scene.cs">
       <SubType>Form</SubType>
@@ -81,6 +87,9 @@
     <Compile Include="head_classes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ai_scene.resx">
+      <DependentUpon>ai_scene.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="battle_scene.resx">
       <DependentUpon>battle_scene.cs</DependentUpon>
     </EmbeddedResource>

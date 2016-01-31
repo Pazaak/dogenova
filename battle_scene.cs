@@ -41,6 +41,8 @@ namespace Dogenova
         controller cont1;
         controller cont2;
 
+        int turn = 0;
+
         public battle_scene(int[] battlers, int idController1, int idController2)
         {
             InitializeComponent();
@@ -152,8 +154,8 @@ namespace Dogenova
         private void defend_Click(object sender, EventArgs e)
         {
             battler b1 = battlerFormation[row];
-            pre_combat[speedTier[row]] = (() => aDefend(b1, true));
-            post_combat[speedTier[row]] = (() => aDefend(b1, false));
+            pre_combat[speedTier[row]] = (() => combat_methods.aDefend(b1, true, feedback));
+            post_combat[speedTier[row]] = (() => combat_methods.aDefend(b1, false, feedback));
             imgBoxes[charFormation[row++]].Show();
 
             while (battlerFormation[row].dead) row++;
@@ -162,6 +164,9 @@ namespace Dogenova
             {
                 AIactions();
                 turnActions();
+
+                row = 0;
+                while (battlerFormation[row].dead) row++;
             }
         }
 
@@ -201,7 +206,7 @@ namespace Dogenova
             {
                 battler b1 = battlerFormation[row];
                 battler b2 = battlerFormation[imgFormation[id]];
-                combat[speedTier[row]] = (() => aAttack(b1, b2));
+                combat[speedTier[row]] = (() => combat_methods.aAttack(b1, b2, feedback));
                 targeting = false;
                 imgBoxes[charFormation[row++]].Show();
                 this.Cursor = Cursors.Default;
@@ -211,7 +216,7 @@ namespace Dogenova
             {
                 battler b1 = battlerFormation[row];
                 battler b2 = battlerFormation[imgFormation[id]];
-                combat[speedTier[row]] = (() => aAttack(b1, b2));
+                combat[speedTier[row]] = (() => combat_methods.aAttack(b1, b2, feedback));
                 targeting = false;
                 imgBoxes[charFormation[row++]].Show();
                 this.Cursor = Cursors.Default;
@@ -280,22 +285,11 @@ namespace Dogenova
 
         }
 
-        private void aAttack(battler source, battler target)
-        {
-            int dmg = combat_methods.damageOT(source, target);
-            feedback.Text += source.ToString() + " does " + dmg + "p to " + target.ToString() + Environment.NewLine;
-        }
-
-        private void aDefend(battler target, bool begin)
-        {
-            target.defending = begin;
-            if (begin)
-                feedback.Text += target.ToString() + " defends"+Environment.NewLine;
-        }
-
         private void turnActions()
         {
-            feedback.Clear();
+            feedback.AppendText("-----------------------------------------------------"+Environment.NewLine);
+            feedback.AppendText("Turn " + (++turn).ToString() + Environment.NewLine);
+            feedback.AppendText("-----------------------------------------------------" + Environment.NewLine);
 
             foreach (Action a in pre_combat.Concat(combat).Concat(post_combat))
             {
@@ -366,12 +360,12 @@ namespace Dogenova
                     {
                         case Constants.F_DEFEND:
                             battler temp = battlerFormation[pre[1]];
-                            pre_combat[i] = (() => aDefend(temp, true));
+                            pre_combat[i] = (() => combat_methods.aDefend(temp, true, feedback));
                             break;
                         case Constants.F_ATTACK:
                             battler b1 = battlerFormation[pre[1]];
                             battler b2 = battlerFormation[pre[2]];
-                            pre_combat[i] = (() => aAttack(b1, b2));
+                            pre_combat[i] = (() => combat_methods.aAttack(b1, b2, feedback));
                             break;
                     }
                 #endregion
@@ -384,7 +378,7 @@ namespace Dogenova
                         case Constants.F_ATTACK:
                             battler b1 = battlerFormation[mid[1]];
                             battler b2 = battlerFormation[mid[2]];
-                            combat[i] = (() => aAttack(b1, b2));
+                            combat[i] = (() => combat_methods.aAttack(b1, b2, feedback));
                             break;
                     }
                 #endregion
@@ -396,12 +390,12 @@ namespace Dogenova
                     {
                         case Constants.F_DEFEND:
                             battler temp = battlerFormation[post[1]];
-                            post_combat[i] = (() => aDefend(temp, false));
+                            post_combat[i] = (() => combat_methods.aDefend(temp, false, feedback));
                             break;
                         case Constants.F_ATTACK:
                             battler b1 = battlerFormation[post[1]];
                             battler b2 = battlerFormation[post[2]];
-                            post_combat[i] = (() => aAttack(b1, b2));
+                            post_combat[i] = (() => combat_methods.aAttack(b1, b2, feedback));
                             break;
                     }
                 #endregion

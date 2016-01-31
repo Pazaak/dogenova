@@ -36,3 +36,4 @@ C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Bac
 C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\Dogenova.Properties.Resources.resources
 C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Aggalem\mis documentos\visual studio 2010\Projects\Dogenova\Dogenova\obj\x86\Debug\Dogenova.ai_scene.resources

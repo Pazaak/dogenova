@@ -11,6 +11,8 @@ namespace Dogenova
 {
     public partial class class_select : Form
     {
+        Random rng = new Random();
+
         public class_select()
         {
             InitializeComponent();
@@ -19,17 +21,20 @@ namespace Dogenova
             drop1.SelectedIndex = 0;
             drop6.SelectedIndex = 0;
 
-            Random rnd1 = new Random();
+            reroll();
+        }
 
-            drop2.SelectedIndex = rnd1.Next(8);
-            drop3.SelectedIndex = rnd1.Next(8);
-            drop4.SelectedIndex = rnd1.Next(8);
-            drop5.SelectedIndex = rnd1.Next(8);
+        private void reroll()
+        {
+            drop2.SelectedIndex = rng.Next(8);
+            drop3.SelectedIndex = rng.Next(8);
+            drop4.SelectedIndex = rng.Next(8);
+            drop5.SelectedIndex = rng.Next(8);
 
-            drop7.SelectedIndex = rnd1.Next(8);
-            drop8.SelectedIndex = rnd1.Next(8);
-            drop9.SelectedIndex = rnd1.Next(8);
-            drop10.SelectedIndex = rnd1.Next(8);
+            drop7.SelectedIndex = rng.Next(8);
+            drop8.SelectedIndex = rng.Next(8);
+            drop9.SelectedIndex = rng.Next(8);
+            drop10.SelectedIndex = rng.Next(8);
         }
 
         private void quit_Click(object sender, EventArgs e)
@@ -289,10 +294,23 @@ namespace Dogenova
         {
             int[] args = {drop2.SelectedIndex, drop3.SelectedIndex, drop4.SelectedIndex, drop5.SelectedIndex, drop7.SelectedIndex, drop8.SelectedIndex,
             drop9.SelectedIndex, drop10.SelectedIndex};
-            battle_scene bscene = new battle_scene(args, drop1.SelectedIndex-1, drop6.SelectedIndex);
-            this.Hide();
-            bscene.ShowDialog();
-            this.Show();
+
+            if (drop1.SelectedIndex == 0)
+            {
+                battle_scene bscene = new battle_scene(args, drop1.SelectedIndex - 1, drop6.SelectedIndex);
+                this.Hide();
+                bscene.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                ai_scene bscene = new ai_scene(args, drop1.SelectedIndex - 1, drop6.SelectedIndex); 
+                this.Hide();
+                bscene.ShowDialog();
+                this.Show();
+            }
+
+            reroll();
         }
     }
 }
