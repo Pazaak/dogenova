@@ -26,3 +26,13 @@ C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.class_select.re
 C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.Properties.Resources.resources
 C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.csproj.GenerateResource.Cache
 C:\Users\Maleza\Documents\GitHub\dogenova\obj\x86\Debug\Dogenova.csprojResolveAssemblyReference.cache
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\Dogenova.exe
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\Dogenova.pdb
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\bin\Debug\Dogenova.exe
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\bin\Debug\Dogenova.pdb
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\Dogenova.battle_scene.resources
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\Dogenova.class_select.resources
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\Dogenova.Properties.Resources.resources
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Aggalem\Mis documentos\Visual Studio 2010\Projects\Backup\Dogenova\obj\x86\Debug\GenerateResource.write.1.tlog

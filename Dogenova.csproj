@@ -75,6 +75,9 @@
       <DependentUpon>char_select.cs</DependentUpon>
     </Compile>
     <Compile Include="combat_methods.cs" />
+    <Compile Include="controllers\controller.cs" />
+    <Compile Include="controllers\random_choice.cs" />
+    <Compile Include="controllers\user_choice.cs" />
     <Compile Include="head_classes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +159,7 @@
   <ItemGroup>
     <None Include="Resources\soldier.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

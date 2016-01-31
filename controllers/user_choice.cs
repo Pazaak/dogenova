@@ -19,7 +19,7 @@ namespace Dogenova.controllers
             return true;
         }
 
-        phases controller.getChoice()
+        phases controller.getChoice(battler[] a, int[] b)
         {
             throw new NotImplementedException();
         }

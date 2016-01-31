@@ -6,20 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Dogenova.controllers;
 
 namespace Dogenova
 {
     public partial class battle_scene : Form
     {
-        int[] jobFormation = new int[8];
-
         List<Action> pre_combat = new List<Action>();
         List<Action> combat = new List<Action>();
         List<Action> post_combat = new List<Action>();
 
         battler[] battlerFormation = new battler[8];
 
-        int[] speeds = new int[8];
         int[] speedTier = new int[8];
 
         PictureBox[] imgBoxes = new PictureBox[16];
@@ -40,7 +38,10 @@ namespace Dogenova
 
         int row = 0;
 
-        public battle_scene(int b1, int b2, int b3, int b4)
+        controller cont1;
+        controller cont2;
+
+        public battle_scene(int[] battlers, int idController1, int idController2)
         {
             InitializeComponent();
 
@@ -82,19 +83,12 @@ namespace Dogenova
             #endregion
 
             #region Initialize data
-            jobFormation[0] = b1;
-            jobFormation[1] = b2;
-            jobFormation[2] = b3;
-            jobFormation[3] = b4;
-
-            Random rnd = new Random();
-            jobFormation[4] = rnd.Next(7);
-            jobFormation[5] = rnd.Next(7);
-            jobFormation[6] = rnd.Next(7);
-            jobFormation[7] = rnd.Next(7);
+            int[] jobFormation = battlers;
+            int[] speeds = new int[8];
 
             for (int i = 0; i < 8; i++)
             {
+                // Visual representation
                 InitializeBattler(jobFormation[i], (i<4), i%4);
 
                 switch (jobFormation[i])
@@ -136,7 +130,12 @@ namespace Dogenova
 
             timer1.Start();
 
+            // Calculate speed tiers
             speedTier = combat_methods.combatSpeed(speeds);
+
+            // Initialize controllers
+            cont1 = determineController(idController1, true);
+            cont2 = determineController(idController2, false);
         }
 
         private void retreat_Click(object sender, EventArgs e)
@@ -224,6 +223,9 @@ namespace Dogenova
             {
                 AIactions();
                 turnActions();
+
+                row = 0;
+                while (battlerFormation[row].dead) row++;
             }
         }
 
@@ -301,12 +303,7 @@ namespace Dogenova
 
                 refreshData();
 
-                for (int i = 0; i < 8; i++)
-                {
-                    isAlive(i);
-                    if (battlerFormation[i].dead)
-                        imgBoxes[charFormation[i]].Hide();
-                }
+                isAlive();
 
                 if (enemiesLeft == 0 && alliesLeft == 0)
                 {
@@ -331,9 +328,6 @@ namespace Dogenova
             }
 
             clearOrders();
-
-            row = 0;
-            while (battlerFormation[row].dead) row++;
         }
 
         private void refreshData()
@@ -361,7 +355,7 @@ namespace Dogenova
 
         private void AIactions()
         {
-            phases AIDecision = alfa_beta.AIOrders(battlerFormation, 2);
+            phases AIDecision = cont2.getChoice(battlerFormation, speedTier);
 
             for (int i = 0; i < 8; i++ )
             {
@@ -416,25 +410,44 @@ namespace Dogenova
             }
         }
 
-        private void isAlive(int id)
+        private void isAlive()
         {
-            battler target = battlerFormation[id];
-
-            if (target.hp <= 0 && !target.dead)
+            for (int i = 0; i < 8; i++)
             {
-                target.dead = true;
+                battler target = battlerFormation[i];
 
-                if (target.ally)
+                if (target.hp <= 0 && !target.dead)
                 {
-                    alliesLeft--;
-                    frontAllies -= target.front ? 1 : 0;
+                    target.dead = true;
+
+                    if (target.ally)
+                    {
+                        alliesLeft--;
+                        frontAllies -= target.front ? 1 : 0;
+                    }
+                    else
+                    {
+                        enemiesLeft--;
+                        frontEnemies -= target.front ? 1 : 0;
+                    }
                 }
-                else
-                {
-                    enemiesLeft--;
-                    frontEnemies -= target.front ? 1 : 0;
-                }
+
+                if (battlerFormation[i].dead)
+                    imgBoxes[charFormation[i]].Hide();
             }
+            
+        }
+
+        private controller determineController(int id, bool actor)
+        {
+            switch (id)
+            {
+                case -1:
+                    return new user_choice();
+                case 0:
+                    return new random_choice(actor);
+            }
+            return null;
         }
     }
 }

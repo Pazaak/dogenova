@@ -7,8 +7,8 @@ namespace Dogenova.controllers
 {
     interface controller
     {
-        public bool isUser();
-        public bool isCon1();
-        public phases getChoice();
+        bool isUser();
+        bool isCon1();
+        phases getChoice(battler[] a, int[] b);
     }
 }
