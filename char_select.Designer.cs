@@ -199,7 +199,9 @@
             this.drop1.FormattingEnabled = true;
             this.drop1.Items.AddRange(new object[] {
             "User",
-            "Random"});
+            "Random",
+            "Classic",
+            "Alfa-Beta"});
             this.drop1.Location = new System.Drawing.Point(10, 91);
             this.drop1.Name = "drop1";
             this.drop1.Size = new System.Drawing.Size(121, 21);
@@ -209,7 +211,9 @@
             // 
             this.drop6.FormattingEnabled = true;
             this.drop6.Items.AddRange(new object[] {
-            "Random"});
+            "Random",
+            "Classic",
+            "Alfa-Beta"});
             this.drop6.Location = new System.Drawing.Point(10, 197);
             this.drop6.Name = "drop6";
             this.drop6.Size = new System.Drawing.Size(121, 21);

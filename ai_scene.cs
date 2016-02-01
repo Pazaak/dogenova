@@ -245,6 +245,10 @@ namespace Dogenova
                     return new user_choice();
                 case 0:
                     return new random_choice(actor);
+                case 1:
+                    return new classic_choice(actor);
+                case 2:
+                    return new alfabeta_choice(actor);
             }
             return null;
         }

@@ -7,7 +7,7 @@ namespace Dogenova
 {
     class alfa_beta
     {
-        public static phases AIOrders(battler[] battlers, int maxDepth)
+        public static phases AIOrders(battler[] battlers, int[] tiers, bool con1, int maxDepth)
         {
             int next = 0, prev = -1;
 
@@ -33,7 +33,7 @@ namespace Dogenova
 
                     if (tree[next].depth != maxDepth) // Last level must not be populated
                     {
-                        populate(tree, next);
+                        populate(tree, tiers, con1, next);
                         tree[next].visited = true;
                         if (tree[next].first == tree.Count)
                         {
@@ -51,7 +51,7 @@ namespace Dogenova
                     }
                     else // Last level of the tree
                     {
-                        tree[next].value = valuate(tree[next].battlers);
+                        tree[next].value = valuate(tree[next].battlers, con1);
                         tree[next].visited = true;
                         tree[next].valuated = true;
                         tree[next].Clear();
@@ -137,36 +137,26 @@ namespace Dogenova
             return finalActions; // node.initializated
         }
 
-        private static void populate(List<node> _tree, int id)
+        private static void populate(List<node> _tree, int[] tiers, bool con1, int id)
         {
             // DEBUG
             node n1 = _tree[id];
             node n2 = _tree[0];
             // DEBUG
 
-            int[] speeds = new int[8];
-            int[] tiers = new int[8];
-
             int selector = 0;
 
             battler[] _battlers = _tree[id].battlers;
-            bool AI = (_tree[id].depth % 2 == 0);
+            bool fa1 = (_tree[id].depth % 2 == 0);
+            fa1 = con1 ? fa1 : !fa1;
 
             List<phases>[] swap = new List<phases>[2];
             swap[0] = new List<phases>();
             swap[1] = new List<phases>();
 
-            for (int i = 0; i < 8; i++)
-            {
-                tiers[i] = i;
-                speeds[i] = _battlers[i].sp;
-            }
-
-            tiers = combat_methods.combatSpeed(speeds);
-
             swap[0].Add(_tree[id].orders);
 
-            for (int i = AI? 4 : 0; i < (AI? 8 : 4); i++)
+            for (int i = fa1? 0 : 4; i < (fa1? 4 : 8); i++)
             {
                 if (!_battlers[i].dead)
                 {
@@ -190,7 +180,7 @@ namespace Dogenova
                         List<int> frontTargets = new List<int>();
                         List<int> backTargets = new List<int>();
 
-                        for (int k = AI ? 0 : 4; k < (AI ? 4 : 8); k++)
+                        for (int k = fa1 ? 4 : 0; k < (fa1 ? 8 : 0); k++)
                         {
                             if (!_battlers[k].dead)
                             {
@@ -244,13 +234,13 @@ namespace Dogenova
             _tree[id].last = _tree.Count;
         }
 
-        private static int valuate(battler[] field)
+        private static int valuate(battler[] field, bool con1)
         {
             int aggro = 3; // Pending to be externalized: 1 min agrro
             int deadAllies = 0, deadEnemies = 0, frontDeadAllies = 0, frontDeadEnemies = 0 ;
             int frontAllies = 0, frontEnemies = 0, differentialAllies = 0, differentialEnemies = 0;
 
-            for (int i = 0; i < 4; i++)
+            for (int i = con1 ? 0 : 4; i < (con1 ? 4 : 8); i++)
             {
                 deadAllies += field[i].dead ? 1 : 0;
                 frontDeadAllies += (field[i].dead && field[i].front) ? 1 : 0;
@@ -259,7 +249,7 @@ namespace Dogenova
                     differentialAllies += (int)( (field[i].maxHp - field[i].hp) * 100 / field[i].maxHp);
             }
 
-            for (int i = 4; i < 8; i++)
+            for (int i = con1 ? 4 : 0; i < (con1 ? 8 : 4); i++)
             {
                 deadEnemies += field[i].dead ? 1 : 0;
                 frontDeadEnemies += (field[i].dead && field[i].front) ? 1 : 0;
