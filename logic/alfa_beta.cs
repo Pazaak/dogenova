@@ -180,7 +180,7 @@ namespace Dogenova
                         List<int> frontTargets = new List<int>();
                         List<int> backTargets = new List<int>();
 
-                        for (int k = fa1 ? 4 : 0; k < (fa1 ? 8 : 0); k++)
+                        for (int k = fa1 ? 4 : 0; k < (fa1 ? 8 : 4); k++)
                         {
                             if (!_battlers[k].dead)
                             {
@@ -262,15 +262,15 @@ namespace Dogenova
                 return 0;
 
             if (deadEnemies == 4) // AI lose
-                return int.MinValue;
-
-            if (deadAllies == 4) // AI win
                 return int.MaxValue;
 
-            int value = deadAllies * aggro * 500 - deadEnemies * 500;
-            value += differentialAllies * aggro - differentialEnemies;
-            value += (frontAllies == frontDeadAllies) ? (4-deadAllies) * (frontEnemies - frontDeadEnemies) * aggro * 100 : 0;
-            value -= (frontEnemies == frontDeadEnemies) ? (4-deadEnemies) * (frontAllies-frontDeadAllies) * 100 : 0;
+            if (deadAllies == 4) // AI win
+                return int.MinValue;
+
+            int value = deadEnemies * 500 - deadAllies * aggro * 500;
+            value += differentialEnemies - differentialAllies;
+            value -= (frontAllies == frontDeadAllies) ? (4-deadAllies) * (frontEnemies - frontDeadEnemies) * 100 : 0;
+            value += (frontEnemies == frontDeadEnemies) ? (4-deadEnemies) * (frontAllies-frontDeadAllies) * 100 : 0;
 
             return value;
         }
