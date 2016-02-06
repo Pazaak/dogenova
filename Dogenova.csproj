@@ -80,6 +80,7 @@
     <Compile Include="char_select.Designer.cs">
       <DependentUpon>char_select.cs</DependentUpon>
     </Compile>
+    <Compile Include="logic\classicFunctions.cs" />
     <Compile Include="logic\combat_methods.cs" />
     <Compile Include="controllers\alfabeta_choice.cs" />
     <Compile Include="controllers\classic_choice.cs" />
