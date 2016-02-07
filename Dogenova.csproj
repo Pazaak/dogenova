@@ -67,6 +67,12 @@
     <Compile Include="ai_scene.Designer.cs">
       <DependentUpon>ai_scene.cs</DependentUpon>
     </Compile>
+    <Compile Include="automatic_scene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="automatic_scene.Designer.cs">
+      <DependentUpon>automatic_scene.cs</DependentUpon>
+    </Compile>
     <Compile Include="logic\alfa_beta.cs" />
     <Compile Include="battle_scene.cs">
       <SubType>Form</SubType>
@@ -88,16 +94,28 @@
     <Compile Include="controllers\random_choice.cs" />
     <Compile Include="controllers\user_choice.cs" />
     <Compile Include="logic\head_classes.cs" />
+    <Compile Include="mode_selection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mode_selection.Designer.cs">
+      <DependentUpon>mode_selection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ai_scene.resx">
       <DependentUpon>ai_scene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="automatic_scene.resx">
+      <DependentUpon>automatic_scene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="battle_scene.resx">
       <DependentUpon>battle_scene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="char_select.resx">
       <DependentUpon>char_select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mode_selection.resx">
+      <DependentUpon>mode_selection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
