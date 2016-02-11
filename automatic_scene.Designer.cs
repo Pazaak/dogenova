@@ -38,7 +38,7 @@
             this.drop1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.runButton = new System.Windows.Forms.Button();
-            this.stopButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -61,6 +61,7 @@
             this.t2Label = new System.Windows.Forms.Label();
             this.t1Label = new System.Windows.Forms.Label();
             this.iterLabel = new System.Windows.Forms.Label();
+            this.nIter = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,6 +70,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nIter)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -90,11 +92,13 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
             this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.nIter, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -107,7 +111,7 @@
             // 
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.drop2);
-            this.panel2.Location = new System.Drawing.Point(262, 3);
+            this.panel2.Location = new System.Drawing.Point(175, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(166, 79);
             this.panel2.TabIndex = 1;
@@ -172,7 +176,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.runButton, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.stopButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.resetButton, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.quitButton, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 407);
@@ -193,16 +197,16 @@
             this.runButton.UseVisualStyleBackColor = true;
             this.runButton.Click += new System.EventHandler(this.runButton_Click);
             // 
-            // stopButton
+            // resetButton
             // 
-            this.stopButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stopButton.Location = new System.Drawing.Point(175, 3);
-            this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(166, 45);
-            this.stopButton.TabIndex = 1;
-            this.stopButton.Text = "Stop";
-            this.stopButton.UseVisualStyleBackColor = true;
-            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
+            this.resetButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resetButton.Location = new System.Drawing.Point(175, 3);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(166, 45);
+            this.resetButton.TabIndex = 1;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // quitButton
             // 
@@ -426,6 +430,19 @@
             this.iterLabel.TabIndex = 0;
             this.iterLabel.Text = "Iterations: 0";
             // 
+            // nIter
+            // 
+            this.nIter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.nIter.Location = new System.Drawing.Point(347, 62);
+            this.nIter.Name = "nIter";
+            this.nIter.Size = new System.Drawing.Size(168, 20);
+            this.nIter.TabIndex = 2;
+            this.nIter.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // automatic_scene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,6 +463,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nIter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,7 +480,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox drop1;
         private System.Windows.Forms.Button runButton;
-        private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button quitButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel3;
@@ -485,5 +503,6 @@
         private System.Windows.Forms.Label t2mtimeLabel;
         private System.Windows.Forms.Label t1stdtimeLabel;
         private System.Windows.Forms.Label t1mtimeLabel;
+        private System.Windows.Forms.NumericUpDown nIter;
     }
 }
