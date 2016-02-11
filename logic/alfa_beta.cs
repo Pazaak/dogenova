@@ -23,7 +23,7 @@ namespace Dogenova
                 node temp = tree[next];
                 //
 
-                if (!tree[next].visited) // Going down
+                if (!tree[next].visited) // Traversing the tree downwards, creating nodes and evaluating
                 {
                     if ((tree[next].depth % 2 == 0) && (tree[next].depth != 0)) // Pair levels hold full orders
                     {
@@ -139,99 +139,95 @@ namespace Dogenova
 
         private static void populate(List<node> _tree, int[] tiers, bool con1, int id)
         {
-            // DEBUG
-            node n1 = _tree[id];
-            node n2 = _tree[0];
-            // DEBUG
+            // Assign the index of the first child
+            _tree[id].first = _tree.Count();
 
-            int selector = 0;
-
+            // Calculate back targets and front targets
+            int nDepth = _tree[id].depth;
+            int first = (nDepth % 2 == 0) ^ con1 ? 0 : 4;
             battler[] _battlers = _tree[id].battlers;
-            bool fa1 = (_tree[id].depth % 2 == 0);
-            fa1 = con1 ? fa1 : !fa1;
+            List<int> frontTargets = new List<int>();
+            List<int> backTargets = new List<int>();
 
-            List<phases>[] swap = new List<phases>[2];
-            swap[0] = new List<phases>();
-            swap[1] = new List<phases>();
-
-            swap[0].Add(_tree[id].orders);
-
-            for (int i = fa1? 0 : 4; i < (fa1? 4 : 8); i++)
+            for (int k = first; k < first+4; k++)
             {
-                if (!_battlers[i].dead)
+                if (!_battlers[k].dead)
                 {
-                    selector = (swap[0].Count > swap[1].Count) ? 0 : 1;
-
-                    for (int j = 0; j < swap[selector].Count; j++)
-                    {
-
-                        // Defense
-                        phases temp = swap[selector][j].Clone();
-
-                        temp.pre_combat[tiers[i]].Add(Constants.F_DEFEND);
-                        temp.pre_combat[tiers[i]].Add(i);
-                        temp.post_combat[tiers[i]].Add(Constants.F_DEFEND);
-                        temp.post_combat[tiers[i]].Add(i);
-
-                        swap[1 - selector].Add(temp);
-
-                        // Attack
-
-                        List<int> frontTargets = new List<int>();
-                        List<int> backTargets = new List<int>();
-
-                        for (int k = fa1 ? 4 : 0; k < (fa1 ? 8 : 4); k++)
-                        {
-                            if (!_battlers[k].dead)
-                            {
-                                if (_battlers[k].front)
-                                    frontTargets.Add(k);
-                                else
-                                    backTargets.Add(k);
-                            }
-                        }
-
-                        if (frontTargets.Count == 0 || !_battlers[i].front)
-                        {
-                            foreach (int a in backTargets)
-                            {
-                                phases temp1 = swap[selector][j].Clone();
-                                temp1.combat[tiers[i]].Add(Constants.F_ATTACK);
-                                temp1.combat[tiers[i]].Add(i);
-                                temp1.combat[tiers[i]].Add(a);
-                                swap[1 - selector].Add(temp1);
-                            }
-                        }
-
-                        foreach (int a in frontTargets)
-                        {
-                            phases temp1 = swap[selector][j].Clone();
-                            temp1.combat[tiers[i]].Add(Constants.F_ATTACK);
-                            temp1.combat[tiers[i]].Add(i);
-                            temp1.combat[tiers[i]].Add(a);
-                            swap[1 - selector].Add(temp1);
-                        }
-
-                    }
-                    swap[selector].Clear();
+                    if (_battlers[k].front)
+                        frontTargets.Add(k);
+                    else
+                        backTargets.Add(k);
                 }
             }
 
-            _tree[id].first = _tree.Count;
+            // Populate the node
+            populateIter(_tree, tiers, con1, id, _tree[id].orders, _battlers, frontTargets, backTargets, 0);
 
-            int nDepth = _tree[id].depth + 1;
+            // Assign the index of the last child
+            _tree[id].last = _tree.Count();
+        }
 
-            selector = (swap[0].Count > swap[1].Count) ? 0 : 1;
-
-            foreach (phases p in swap[selector])
+        private static void populateIter(List<node> _tree, int[] tiers, bool con1, int id, phases act, battler[] btls, List<int> frontTargets, List<int> backTargets, int fill)
+        {
+            int nDepth = _tree[id].depth;
+            if (fill == 4) // Phases are complete, add them to the tree
             {
-                node temp = new node(nDepth, id, _battlers, p);
+                node temp = new node(nDepth + 1, id, btls, act);
                 temp.alpha = _tree[id].alpha;
                 temp.beta = _tree[id].beta;
                 _tree.Add(temp);
+                return;
+            }
+            // Get the battler whose actions must be determined
+            // if pair depth -> MAX node
+            //  if con1 -> [0-3] battlers
+            //  if !con1 -> [4-7] battlers
+            // if impair depth -> MIN node
+            //  if con1 -> [4-7] battlers
+            //  if !con1 -> [0-3] battlers
+            // MAX ^ con1? 4+fill : fill
+            int act_btl = (nDepth % 2 == 0) ^ con1 ? 4+fill : fill;
+            
+            // Check if the battler is dead, ignore the battler
+            if (btls[act_btl].dead)
+            {
+                populateIter(_tree, tiers, con1, id, act, btls, frontTargets, backTargets, fill + 1);
+                return;
             }
 
-            _tree[id].last = _tree.Count;
+            // Defend
+            phases neoPhases = act.Clone();
+            neoPhases.pre_combat[tiers[act_btl]].Add(Constants.F_DEFEND);
+            neoPhases.pre_combat[tiers[act_btl]].Add(act_btl);
+            neoPhases.post_combat[tiers[act_btl]].Add(Constants.F_DEFEND);
+            neoPhases.post_combat[tiers[act_btl]].Add(act_btl);
+            populateIter(_tree, tiers, con1, id, neoPhases, btls, frontTargets, backTargets, fill + 1);
+
+
+            // Attack back targets (if possible)
+            if (frontTargets.Count == 0 || !btls[act_btl].front)
+            {
+                foreach (int a in backTargets)
+                {
+                    neoPhases = act.Clone();
+                    neoPhases.combat[tiers[act_btl]].Add(Constants.F_ATTACK);
+                    neoPhases.combat[tiers[act_btl]].Add(act_btl);
+                    neoPhases.combat[tiers[act_btl]].Add(a);
+                    populateIter(_tree, tiers, con1, id, neoPhases, btls, frontTargets, backTargets, fill + 1);
+                }
+            }
+
+            // Attack front targets
+            foreach (int a in frontTargets)
+            {
+                neoPhases = act.Clone();
+                neoPhases.combat[tiers[act_btl]].Add(Constants.F_ATTACK);
+                neoPhases.combat[tiers[act_btl]].Add(act_btl);
+                neoPhases.combat[tiers[act_btl]].Add(a);
+                populateIter(_tree, tiers, con1, id, neoPhases, btls, frontTargets, backTargets, fill + 1);
+            }
+
+
         }
 
         private static int valuate(battler[] field, bool con1)
