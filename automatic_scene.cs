@@ -250,8 +250,8 @@ namespace Dogenova
 
                 // Aftermath and metrics
                 turns.Add(turn);
-                updateData();
             }
+            updateData();
         }
 
         private controller determineController(int id, bool actor)

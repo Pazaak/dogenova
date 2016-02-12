@@ -94,7 +94,6 @@ namespace Dogenova
                         else
                             tree[next].value = (tree[next].value > tree[next].beta) ? tree[next].value : tree[next].beta;
 
-                        //tree[next].Clear();
                         tree[next].valuated = true;
 
                         breakBranch(tree, next, prev + 1);
